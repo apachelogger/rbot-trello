@@ -2,7 +2,7 @@ require 'trello'
 require 'pp'
 
 class TrelloPlugin < Plugin
-    def initialize()
+    def initialize
         super
 
         # Remove the timestamp on startup to prevent polls of events while we were offline and a resulting flood of events.
