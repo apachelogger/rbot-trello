@@ -10,7 +10,7 @@ class TrelloPlugin < Plugin
                                                :wizard => false,
                                                :desc => "kittens")
 
-        @timer = @bot.timer.add(30) do
+        @timer = @bot.timer.add(50) do
             Trello.configure do |config|
                 config.developer_public_key = '4592c3158846aa90d063fc5a6779a4c8'
                 config.member_token = @bot.config['trello.token']
