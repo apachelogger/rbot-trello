@@ -5,6 +5,10 @@ class TrelloPlugin < Plugin
     def initialize()
         super
 
+        # Remove the timestamp on startup to prevent polls of events while we were offline and a resulting flood of events.
+        @registry.delete(:last_check)
+        @registry.flush
+
         Config.register Config::ArrayValue.new('trello.token',
                                                :default => '',
                                                :wizard => false,
